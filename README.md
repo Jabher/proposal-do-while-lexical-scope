@@ -39,15 +39,16 @@ while (true) {
 
 Both of them have issues:
 
-Option 1 is mutating the external state, is verbose and is can pollute the higher-level lexical scope with variable only needed for inner scope.
+Option 1 is mutating the external state, is verbose and is can pollute the higher-level lexical scope with variable only needed for inner scope. This is still declarative approach: code states, that it has a computation block, and it has an break post-condition.
 
-Option 2 has 2 issues:
+Option 2 has 3 issues:
 - despite the fact that it has post-condition, it is declared in pre-condition manner (`while () {}` instead of `do {} while ()`)
 - it is using `break`. Usage of this statement is controversial and discussed a lot, e.g.: 
 [1](https://softwareengineering.stackexchange.com/questions/58237/are-break-and-continue-bad-programming-practices), 
 [2](https://stackoverflow.com/questions/3922599/is-it-a-bad-practice-to-use-break-in-a-for-loop), 
 [3](https://www.quora.com/Is-there-anything-bad-about-using-a-while-true-loop-and-exiting-it-using-a-break-statement), 
 [4](https://www.reddit.com/r/learnjava/comments/3mc1lb/why_is_it_bad_practice_to_use_the_break_or/)
+- its approach us redundantly imperative: it increases cognitive complexity; instead of clearly stated break condition the one who sees this block for a first time has to look though it to discover the `break` control flow statements
 
 ## Use cases
 
