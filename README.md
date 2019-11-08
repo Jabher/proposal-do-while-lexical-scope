@@ -1,6 +1,6 @@
 # Do..while extended lexical scope
 
-Include `while(...)` expression into the lexical scope of `do {...}` block in a manner that allows to white in following manner:
+Include the condition inside of `while(...)` expression into the lexical scope of `do {...}` block in a manner that allows to white in following manner:
 ```javascript
 do {
   const shouldQuit = getShouldIQuit();
